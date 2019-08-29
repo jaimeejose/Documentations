@@ -1,3 +1,4 @@
+
 # ArJaiSolutions Extension Library
 
 ***ArJaiSolutions*** extension library contains some basic extensions for string, Objects and Mainly extension for Iquerable to create dynamic expressions.
@@ -30,6 +31,12 @@ Converts this string to int if unable to convert it returns null
 
     string.ToInt(int)
 Converts this string to int if unable to convert it returns the default number Or 0 (if no default provided)
+
+    string.Tolong()
+Converts this string to long if unable to convert it returns null
+
+    string.Tolong(int)
+Converts this string to long if unable to convert it returns the default number Or 0 (if no default provided)
 
     string.ToUTCDateTime()
 Converts the given string to UTCDatetime
