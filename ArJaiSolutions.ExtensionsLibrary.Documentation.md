@@ -35,7 +35,7 @@ Converts this string to int if unable to convert it returns the default number O
     string.Tolong()
 Converts this string to long if unable to convert it returns null
 
-    string.Tolong(int)
+    string.Tolong(long)
 Converts this string to long if unable to convert it returns the default number Or 0 (if no default provided)
 
     string.ToUTCDateTime()
