@@ -41,6 +41,12 @@ Converts this string to long if unable to convert it returns the default number 
     string.ToUTCDateTime()
 Converts the given string to UTCDatetime
 
+    string.ToEnum<T>()
+Converts string to any Enum of the Type "T"
+
+    string.ToEnum<T>(T defaultValue)
+Converts string to any Enum of the Type "T", with an default value of the Enum
+
 ## Object Extensions
 
     Object.ConvertToTheGivenType(System.Type)
