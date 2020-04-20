@@ -52,6 +52,25 @@ Converts string to any Enum of the Type "T", with an default value of the Enum
     Object.ConvertToTheGivenType(System.Type)
 Converts the object provided to the given type -> Except: DateTime - Which is converted to UTCDateTime , bool - Which is converted to bool from (true/false, 0/1, yes/no, y/n)
 
+ string.ToBool()
+
+Converts string to bool if not able to convert, It will return null. Possible values from string to bool are true/false, 0/1,yes/no, y/n.
+
+    string.ToBool(bool)
+Converts string to bool if not able to convert, It will return the default value provided or false. Possible values from string to bool are true/false, 0/1,yes/no, y/n
+
+    string.ToInt()
+Converts this string to int if unable to convert it returns null
+
+    string.ToInt(int)
+Converts this string to int if unable to convert it returns the default number Or 0 (if no default provided)
+
+    string.Tolong()
+Converts this string to long if unable to convert it returns null
+
+    string.Tolong(long)
+Converts this string to long if unable to convert it returns the default number Or 0 (if no default provided)
+
 ## Queryable Extensions
     IQueryable.PreadicateConditionBasedFiltering<TSource>(System.Linq.IQueryable<TSource>, string, ExtensionLibrary.PreadicateConditions, object)
 To create expression for a source with the property and input value based on the condition provided 
