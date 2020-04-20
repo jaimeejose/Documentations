@@ -52,7 +52,7 @@ Converts string to any Enum of the Type "T", with an default value of the Enum
     Object.ConvertToTheGivenType(System.Type)
 Converts the object provided to the given type -> Except: DateTime - Which is converted to UTCDateTime , bool - Which is converted to bool from (true/false, 0/1, yes/no, y/n)
 
- string.ToBool()
+    string.ToBool()
 
 Converts string to bool if not able to convert, It will return null. Possible values from string to bool are true/false, 0/1,yes/no, y/n.
 
