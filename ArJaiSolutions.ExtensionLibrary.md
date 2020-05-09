@@ -111,12 +111,14 @@ Static Methods
 | `StringContent` | EncodeForPostAsJson(this `Object` objectToEncode) | To serialise an object using UTF8 and json mediatype into a string content for Post Data | 
 | `Boolean` | ToBool(this `Object` boolObject, `Boolean` defaultValue = False) | Converts object to bool  if not able to convert, It will return the defaultbool provided or false.  Possible values from string to bool are  true/false, 0/1,yes/no, y/n | 
 | `Nullable<Boolean>` | ToBool(this `Object` boolObject) | Converts object to bool  if not able to convert, It will return the defaultbool provided or false.  Possible values from string to bool are  true/false, 0/1,yes/no, y/n | 
+| `Double` | ToDouble(this `Object` number, `Double` defaultNumber = 0) | Converts this object to double  if unable to convert it returns the defaultnumber Or 0.0 (if no default provided) | 
+| `Nullable<Double>` | ToDouble(this `Object` number) | Converts this object to double  if unable to convert it returns the defaultnumber Or 0.0 (if no default provided) | 
 | `T` | ToEnum(this `Object` value) | Converts object to any Enum of the Type "T" | 
 | `T` | ToEnum(this `Object` value, `T` defaultValue) | Converts object to any Enum of the Type "T" | 
-| `Int32` | ToInt(this `Object` number, `Int32` defaultNumber = 0) | Converts this object to int  if unable to convert it returnsthe defaultnumber Or 0 (if no default provided) | 
-| `Nullable<Int32>` | ToInt(this `Object` number) | Converts this object to int  if unable to convert it returnsthe defaultnumber Or 0 (if no default provided) | 
-| `Int64` | Tolong(this `Object` number, `Int64` defaultNumber = 0) | Converts this object to long  if unable to convert it returnsthe defaultnumber Or 0 (if no default provided) | 
-| `Nullable<Int64>` | Tolong(this `Object` number) | Converts this object to long  if unable to convert it returnsthe defaultnumber Or 0 (if no default provided) | 
+| `Int32` | ToInt(this `Object` number, `Int32` defaultNumber = 0) | Converts this object to int  if unable to convert it returns the defaultnumber Or 0 (if no default provided) | 
+| `Nullable<Int32>` | ToInt(this `Object` number) | Converts this object to int  if unable to convert it returns the defaultnumber Or 0 (if no default provided) | 
+| `Int64` | Tolong(this `Object` number, `Int64` defaultNumber = 0) | Converts this object to long  if unable to convert it returns the defaultnumber Or 0 (if no default provided) | 
+| `Nullable<Int64>` | Tolong(this `Object` number) | Converts this object to long  if unable to convert it returns the defaultnumber Or 0 (if no default provided) | 
 
 
 ## `PreadicateConditions`
@@ -185,6 +187,8 @@ Static Methods
 | `Nullable<DateTime>` | ToDateTime(this `String` s, `String` format = ddMMyyyy, `String` cultureString = en-GB) | Converts the given string to Datetime based on the format and culture provided  or by Default the format is "ddMMyyyy" and culture is "en-GB" | 
 | `Nullable<DateTime>` | ToDateTime(this `String` s, `String` format, `CultureInfo` culture) | Converts the given string to Datetime based on the format and culture provided  or by Default the format is "ddMMyyyy" and culture is "en-GB" | 
 | `Decimal` | ToDecimal(this `String` decimalString) | Convert the provided Decimal string into a decimal value | 
+| `Double` | ToDouble(this `String` number, `Double` defaultNumber = 0) | Converts this string to double  if unable to convert it returnsthe defaultnumber Or 0.0 (if no default provided) | 
+| `Nullable<Double>` | ToDouble(this `String` number) | Converts this string to double  if unable to convert it returnsthe defaultnumber Or 0.0 (if no default provided) | 
 | `T` | ToEnum(this `String` value) | Converts string to any Enum of the Type "T" | 
 | `T` | ToEnum(this `String` value, `T` defaultValue) | Converts string to any Enum of the Type "T" | 
 | `Nullable<Guid>` | ToGuid(this `String` guidString, `String` guidFormat = D) | Converts Given string and guid Formats  Default guidFormat ='D'  Guid Formats can be - "N","D","B","P","X" | 
