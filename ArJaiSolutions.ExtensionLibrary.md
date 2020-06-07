@@ -63,6 +63,23 @@ Static Methods
 | `IEnumerable<TResult>` | Batch(this `IEnumerable<TSource>` source, `Int32` size, `Func<IEnumerable<TSource>, TResult>` resultSelector) | Batches the source sequence into sized buckets. | 
 
 
+## `Expressions`
+
+Expressions Enum
+```csharp
+public enum ArJaiSolutions.ExtensionLibrary.Expressions
+    : Enum, IComparable, IFormattable, IConvertible
+
+```
+
+Enum
+
+| Value | Name | Summary | 
+| --- | --- | --- | 
+| `0` | And | 'And' Expression, like <i>'Expression.And'</i> | 
+| `1` | Or | 'Or' Expression, like <i>'Expression.Or'</i> | 
+
+
 ## `HttpRequestHeadersExtensions`
 
 Http Request Header Extensions for easy conversions actions
@@ -157,15 +174,17 @@ Static Methods
 
 | Type | Name | Summary | 
 | --- | --- | --- | 
-| `Expression<Func<TSource, Boolean>>` | Equal(`IQueryable<TSource>` source, `ParameterExpression` parameter, `Expression` property, `Expression` target) | Returns the Expression of "Equal" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property==target) where paramter is of the type source | 
+| `Expression` | Equal(`Expression` property, `Expression` target) | Returns the Expression of "Equal" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property==target) where paramter is of the type source | 
 | `Expression` | GetNavigationPropertyExpression(`Expression` parameter, `PreadicateConditions` preadicate, `Object` targetObjectValue, `String[]` properties) | Creates an expression for the property in the path provided.  You could have an expression created for asub properties child property  e.g. object school has a property of students and you want to get a expression  where students have their firstname started with 'A'  you need to call this method with expression parameter which means x=&gt;  which you can make by doing Expression.Paramter(type(ParentElement),"x") (in our case parent element is school)  once you have a parameter set up then call  GetNavigationPropertyExpression(parameter,preadicatecondition.condition, "A","students","firstname"); | 
-| `Expression<Func<TSource, Boolean>>` | GreaterThan(`IQueryable<TSource>` source, `ParameterExpression` parameter, `Expression` property, `Expression` target) | Returns the Expression of "GreaterThan" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property&gt;target) where paramter is of the type source | 
-| `Expression<Func<TSource, Boolean>>` | GreaterThanOrEqualTo(`IQueryable<TSource>` source, `ParameterExpression` parameter, `Expression` property, `Expression` target, `Boolean` inclusive = True) | Returns the Expression of "GreaterThan" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property&gt;=target) where paramter is of the type source | 
-| `Expression<Func<TSource, Boolean>>` | LessThan(`IQueryable<TSource>` source, `ParameterExpression` parameter, `Expression` property, `Expression` target) | Returns the Expression of "LessThan" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property&lt;target) where paramter is of the type source | 
-| `Expression<Func<TSource, Boolean>>` | LessThanOrEqualTo(`IQueryable<TSource>` source, `ParameterExpression` parameter, `Expression` property, `Expression` target, `Boolean` inclusive = True) | Returns the Expression of "LessThanOrEqual" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property=&lt;target) where paramter is of the type source | 
+| `Expression` | GetNavigationPropertyMultipleExpressions(`Expression` parameter, `PreadicateConditions[]` preadicate, `Expressions[]` expressions, `Object[]` targetObjectValue, `String[]` properties) | Creates an expression for the property in the path provided.  You could have an expression created for asub properties child property.  <br /><br />  e.g. object school has a property of students and you want to get a expression  where students have their Firstname started with 'A'  <br />  and the Lastname started with 'T'  <br />  and is Active equals 'true'  <br />  you need to call this method with expression parameter which means x=&gt;  <br />  which you can make by doing Expression.Paramter(type(ParentElement),"x") (in our case parent element is school)  once you have a parameter set up then call  <code>  GetNavigationPropertyExpression(parameter, new []{PreadicateConditions.startsWith, PreadicateConditions.startsWith, PreadicateConditions.Equals}  , new []{Expressions.And, Expressions.And}, new[]{"A","T",true}, new []{"students","Firstname,Lastname,Active"});  </code> | 
+| `Expression` | GreaterThan(`Expression` property, `Expression` target) | Returns the Expression of "GreaterThan" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property&gt;target) where paramter is of the type source | 
+| `Expression` | GreaterThanOrEqualTo(`Expression` property, `Expression` target, `Boolean` inclusive = True) | Returns the Expression of "GreaterThan" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property&gt;=target) where paramter is of the type source | 
+| `Expression` | LessThan(`Expression` property, `Expression` target) | Returns the Expression of "LessThan" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property&lt;target) where paramter is of the type source | 
+| `Expression` | LessThanOrEqualTo(`Expression` property, `Expression` target, `Boolean` inclusive = True) | Returns the Expression of "LessThanOrEqual" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property=&lt;target) where paramter is of the type source | 
 | `Expression` | MakePreadicateCondition(`PreadicateConditions` condition, `Expression` left, `Expression` right) | this method makes an Expression for Preadicate Condition. | 
-| `Expression<Func<TSource, Boolean>>` | NotEqual(`IQueryable<TSource>` source, `ParameterExpression` parameter, `Expression` property, `Expression` target) | Returns the Expression of "NotEqual" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property!=target) where paramter is of the type source | 
+| `Expression` | NotEqual(`Expression` property, `Expression` target) | Returns the Expression of "NotEqual" for the source based on the property and target  an example of what is build and returned  e.g.  (parameter =&gt; parameter.property!=target) where paramter is of the type source | 
 | `IQueryable<TSource>` | PreadicateConditionBasedFiltering(this `IQueryable<TSource>` source, `String` propertyName, `PreadicateConditions` condition, `Object` input) | To create expression for a source with the property and input value based on the condition provided    /*Exceptions*/    ArgumentOutOfRangeException if the input value is not been able to convert to the same type of the property | 
+| `Expression` | PreadicateConditionExpression(this `IQueryable<TSource>` source, `ParameterExpression` parameter, `String` propertyName, `PreadicateConditions` condition, `Object` input) | To create expression for a source with the property and input value based on the condition provided    /*Exceptions*/    ArgumentOutOfRangeException if the input value is not been able to convert to the same type of the property | 
 
 
 ## `StringExtensions`
